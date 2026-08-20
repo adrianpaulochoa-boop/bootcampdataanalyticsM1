@@ -10,8 +10,10 @@ liquido_total_bpd = petroleo_bpd + agua_bpd
 corte_agua_pct = agua_bpd / liquido_total_bpd * 100
 
 st.write(pozo)
-st.write(petroleo_pbd)
+st.write(petroleo_bpd)
 st.write(agua_bpd)
 st.write(status)
 st.write(liquido_total_bpd)
 st.write(corte_agua_pct)
+
+st.sidebar.title("Parameters")
