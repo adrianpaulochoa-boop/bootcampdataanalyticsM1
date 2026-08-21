@@ -22,21 +22,21 @@ if modulos == "Introduccion a variables":
 
 elif modulos == "Funciones":
   def calcular_caudal_vogel(caudal_max=1200,presion_yacimiento=3000,presion_fondo=200,decimales=2):
-  """
-    Calculo de caudal de petroleo con Vogel
-
-    Parámetros:
-     
-    caudal_max = Caudal maximo teorico del pozo, BPD
-    presion_yacimiento = Presion promedio del pozo, PSI
-    presion_fondo = Presion del fondo del pozo, PSI
-    decimales = Cantidad de decimales que se quieren en el resultado
-
-  """
-
-  relacion_presion = presion_fondo/presion_yacimiento
-  caudal = caudal_max*(1 - 0.2*relacion_presion - 0.8*(relacion_presion**2))
-  return round(caudal, decimales)
+    """
+      Calculo de caudal de petroleo con Vogel
+  
+      Parámetros:
+       
+      caudal_max = Caudal maximo teorico del pozo, BPD
+      presion_yacimiento = Presion promedio del pozo, PSI
+      presion_fondo = Presion del fondo del pozo, PSI
+      decimales = Cantidad de decimales que se quieren en el resultado
+  
+    """
+  
+    relacion_presion = presion_fondo/presion_yacimiento
+    caudal = caudal_max*(1 - 0.2*relacion_presion - 0.8*(relacion_presion**2))
+    return round(caudal, decimales)
   
   caudal_maximo = st.number_input("Ingrese el caudal maximo")
 
