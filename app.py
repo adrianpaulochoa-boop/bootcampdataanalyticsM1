@@ -21,7 +21,8 @@ if modulos == "Introduccion a variables":
   st.write(corte_agua_pct)
 
 elif modulos == "Funciones":
-  def calcular_caudal_vogel(caudal_max=1200,presion_yacimiento=3000,presion_fondo=200,decimales=2):
+  
+  def calcular_caudal_vogel(caudal_maximo=1200, presion_yacimiento=3000, presion_fondo=200 ,decimales=2):
     """
       Calculo de caudal de petroleo con Vogel
   
