@@ -64,12 +64,14 @@ elif modulos == "POO":
       
       def total_produccion(self):
         total_produccion = self.petroleo + self.agua
-        return total_produccion
+        return st.write(total_produccion)
     
       def proyectar_produccion(self, dias):
         produccion_proyectada = (self.petroleo + self.agua) * dias
         return produccion_proyectada
 
+    st.header("Ingreso de parametros: ")
+    
     nombre_pozo = st.text_input("Ingrese el nombre del pozo: ")
     nombre_campo = st.text_input("Ingrese el campo al que pertenece el pozo: ")
     petroleo = st.number_input("Ingrese la produccion de petroleo", min_value = 0, max_value = 5000, value = 1200)
