@@ -46,7 +46,7 @@ elif modulos == "Funciones":
     
     caudal = calcular_caudal_vogel(caudal_maximo, presion_yacimiento, presion_fondo, decimales)
     st.write("El caudal es:", caudal)
-elif modulos == "POO"
+elif modulos == "POO":
 
     class Pozo:
       def __init__(self, nombre, campo, petroleo, agua):
