@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Bootcamp Data Analytics for Oil & Gas M1")
 st.sidebar.title("Parameters")
 
-modulos = st.sidebar.selectbox("Seleccione un modulo", ["Introduccion a variables", "Funciones"])
+modulos = st.sidebar.selectbox("Seleccione un modulo", ["Introduccion a variables", "Funciones","POO"])
 
 if modulos == "Introduccion a variables":
 
@@ -46,3 +46,31 @@ elif modulos == "Funciones":
     
     caudal = calcular_caudal_vogel(caudal_maximo, presion_yacimiento, presion_fondo, decimales)
     st.write("El caudal es:", caudal)
+elif modulos == "POO"
+
+    class Pozo:
+      def __init__(self, nombre, campo, petroleo, agua):
+    
+        self.nombre = nombre
+        self.campo = campo
+        self.petroleo = petroleo
+        self.agua = agua
+    
+      def mostrar_informacion(self):
+        print("Nombre: ", self.nombre)
+        print("Campo: ", self.campo)
+        print("Petroleo: ", self.petroleo, "BPD")
+        print("Agua: ", self.agua, "m3")
+      
+      def total_produccion(self):
+        total_produccion = self.petroleo + self.agua
+        return total_produccion
+    
+      def proyectar_produccion(self, dias):
+        produccion_proyectada = (self.petroleo + self.agua) * dias
+        return produccion_proyectada
+
+    nombre_pozo = st.text_input("Ingrese el nombre del pozo: ")
+    nombre_campo = st.text_input("Ingrese el campo al que pertenece el pozo: ")
+    petroleo = st.number_input("Ingrese la produccion de petroleo", min_value = 0, max_value = 5000, value = 1200)
+    agua = st.number_input("Ingrese la produccion de agua", min_value = 0, max_value = 5000, value = 1200)
