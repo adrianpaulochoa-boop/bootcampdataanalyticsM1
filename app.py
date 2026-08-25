@@ -1,4 +1,21 @@
 import streamlit as st
+import pandas as pd
+
+import streamlit as st
+import pandas as pd
+
+from funciones_calculos import (
+    calcular_liquido,
+    calcular_bsw,
+    proyectar_produccion
+)
+
+from funciones_datos import (
+    filtrar_pozo,
+    resumen_dataframe
+)
+
+from clase_pozo import Pozo
 
 st.title("Bootcamp Data Analytics for Oil & Gas M1")
 st.sidebar.title("Parameters")
@@ -46,6 +63,8 @@ elif modulos == "Funciones":
     
     caudal = calcular_caudal_vogel(caudal_maximo, presion_yacimiento, presion_fondo, decimales)
     st.write("El caudal es:", caudal)
+
+
 elif modulos == "POO":
 
     class Pozo:
@@ -84,3 +103,48 @@ elif modulos == "POO":
     pozo.total_produccion()
     dias = st.number_input("Ingrese los dias a proyectar: ", min_value = 0, max_value = 365)
     st.write(pozo.proyectar_produccion(dias))
+
+elif modulos == "Importacion de librerias":
+
+    st.title("Aplicación Modular con Funciones y Clases")
+
+    st.header("1. Uso de funciones")
+
+    petroleo = st.number_input(
+        "Producción de petróleo",
+        min_value=0.0,
+        value=800.0
+    )
+
+    agua = st.number_input(
+        "Producción de agua",
+        min_value=0.0,
+        value=200.0
+    )
+
+    dias = st.number_input(
+        "Días",
+        min_value=1,
+        value=30
+    )
+
+    if st.button("Calcular"):
+        liquido = calcular_liquido(
+            petroleo,
+            agua
+        )
+    
+        bsw = calcular_bsw(
+            petroleo,
+            agua
+        )
+    
+        proyeccion = proyectar_produccion(
+            petroleo,
+            dias
+        )
+
+    st.write("Producción líquida:", liquido)
+    st.write("BSW:", round(bsw, 2), "%")
+    st.write("Producción proyectada:", proyeccion)
+
