@@ -20,7 +20,7 @@ from clase_pozo import Pozo
 st.title("Bootcamp Data Analytics for Oil & Gas M1")
 st.sidebar.title("Parameters")
 
-modulos = st.sidebar.selectbox("Seleccione un modulo", ["Introduccion a variables", "Funciones","POO"])
+modulos = st.sidebar.selectbox("Seleccione un modulo", ["Introduccion a variables", "Funciones","POO",Importacion de librerias"])
 
 if modulos == "Introduccion a variables":
 
